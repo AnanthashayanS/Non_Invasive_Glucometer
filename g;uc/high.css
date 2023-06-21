@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap');
+
+
+*{
+margin: 0;
+overflow-x: hidden;
+
+}
+
+@media only screen and (max-device-width: 480px){
+
+
+
+.container{
+    position: relative;
+    height: 170rem;
+    width: 100rem;
+}
+
+.back{
+    position: absolute;
+    top: 15px;
+    font-weight: small;
+}
+
+.titleContent{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 86vw;
+    height: 170vw;
+    padding:20px ;
+    background: #fff;
+    overflow-y: hidden;
+}
+
+h1{
+    background: rgb(255, 255, 255);
+    color: #d72e29;
+    font-size: 3.5rem;
+    font-family: 'Libre Franklin', sans-serif;
+    padding-top: 25px;
+    
+}
+
+p{
+    padding-top: 15px;
+    line-height: 25px;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+span{
+    color: #721712;
+}
+
+.veggi{
+    position: absolute;
+    top: 610px;
+    left: 10px;
+    width: 95vw;
+    height: 70vw;
+    border-radius: 15px;
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+}
+
+h2{
+    color: rgb(255, 255, 255);
+    font-size: 2.2rem;
+    padding: 20px;
+    transition: font-size .5s;
+}
+
+h2:hover{
+    font-size: 2.6rem;
+}
+
+.arrow{
+    color: rgb(244, 194, 219);
+    font-size: 6rem;
+    position: absolute;
+    bottom: -0em;
+    right: 35px;
+}
+
+.titleContent2{
+    position: absolute;
+    top: 57rem;
+    left: 10px;
+    width: 85vw;
+    height: 88vw;
+    padding:20px ;
+    background: rgb(255, 255, 255);
+    background-image: url("highfunny.jpg");
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+}
+.titleContent2 h3{
+    font-size: 2rem;
+    
+}
+
+.titleContent2 p{
+padding-top: 10px;
+line-height: 25px;
+font-family: 'Overpass', sans-serif;
+font-size: 1.2rem;
+}
+
+.fruitBox{
+    position: absolute;
+    top: 82rem;
+    left: 11px;
+    width: 95vw;
+    height: 70vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 10px;
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #b8f6f5 100%);
+    
+}
+
+.fruits{
+    padding: 20px;
+    color: #04513b;
+}
+
+.arrow2{
+    font-size: 6rem;
+    position: absolute;
+    bottom: 0;
+    right: 35px;
+}
+
+.titleContent3{
+    position: absolute;
+    top: 1600px;
+    left: 10px;
+    width: 86vw;
+    height: 170vw;
+    padding:20px ;
+    background: #fff;
+}
+
+.exercise{
+    position: absolute;
+    top: 140rem;
+    left: 10px;
+    width: 95vw;
+    height: 120vw;
+    border-radius: 15px;
+    background-image: url(physicalAct.jpeg);
+    background-size: cover;
+    background-color: #fff;
+    background-blend-mode: multiply;
+}
+
+.exerciseCaption{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    color: rgb(201, 201, 18);
+    background-image: url(exerciseGum.);
+}
+.back{
+    padding: 0;
+    color: #a7a6a6;
+}
+
+footer{
+    padding-left: 150px;
+    padding-bottom: 10px;
+    font-weight: lighter;
+    background-color: antiquewhite;
+}
+
+}
