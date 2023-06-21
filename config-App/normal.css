@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu&display=swap');
+*{
+    background-color: rgb(230, 224, 224);
+}
+
+@media only screen and (max-device-width: 480px){
+
+h1{
+    font-size: 5rem;
+    color: antiquewhite;
+}
+
+.container{
+position: relative;
+height: 200vw;
+overflow: hidden;
+
+}
+
+.container .frame{
+    position: absolute;
+    top: 1vh;
+    left: 3vh;
+height: 850px;
+width: 350px;
+background-image: url(https://i.pinimg.com/originals/1b/08/43/1b0843faa839fadcde48577b95ca7022.gif);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 150%;
+}
+
+h2{
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    font-size: 2rem;
+    color:  rgba(94, 91, 255, 1);
+    font-family: 'Phudu', cursive;
+}
+
+}

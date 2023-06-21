@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    /* background-color: #325C11; */
+    /* overflow: hidden; */
+    
+
+}
+
+@media only screen and (max-device-width: 480px){
+/* Android Large - 1 */
+
+#container{
+    position: relative;
+    width: 10%;
+    height: 10%;
+    
+    background: #D9D9D9;
+    
+}
+
+
+/* Component 1 */
+ #component1{
+    position: absolute;
+    width: 70px;
+    height: 66px;
+    left: 160px;
+    top: 690px;
+    
+}
+
+
+
+/* Ellipse 1 */
+#ellipse{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+}
+
+
+
+
+/* Ellipse 1 */
+#ellipse{
+    position: absolute;
+   
+    border-radius: 20rem;
+    background: #373333;
+    border: 3px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    /* Note: backdrop-filter has minimal browser support */
+    
+    
+}
+
+/* > */
+#caption{
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    top: 18.05%;
+    bottom: 22.05%;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+    
+    color: #D9D9D9;
+    
+    mix-blend-mode: difference;
+    border: 1px solid #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+
+/* test */
+img{
+    position: absolute;
+    width: 789px;
+    height: 567px;
+    left:30px;
+    top: 70px;
+   z-index: -1;
+
+}
+
+
+/* Component 2 */
+#component2{
+    position: absolute;
+    width: 381px;
+    height: 177px;
+    left: -33px;
+    top: 50px;
+    
+}
+
+
+
+
+/* DIET APP */
+
+h1{
+    position: absolute;
+    left: 14.59%;
+    right: 43.83%;
+    top: 12.99%;
+    bottom: 0%;
+    padding-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    
+    color: #325C11;
+    
+}
+
+
+
+/* GLUCOMETER’S */
+h3{
+    position: absolute;
+    left: 16.11%;
+    right: 0%;
+    top: 2.82%;
+    bottom: 87.01%;
+    padding-top: 20px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.14em;
+    
+    color: #000000;
+    
+}
+
+
+
+/* Vector 1 */
+#vector{
+    position: absolute;
+    left: 0%;
+    right: 26.25%;
+    top: 0%;
+    bottom: 3.39%;
+    border-radius: 10% 30% 50% 70%;
+    background: #FFFFFF;
+    mix-blend-mode: overlay;
+    
+}
+
+
+}
+

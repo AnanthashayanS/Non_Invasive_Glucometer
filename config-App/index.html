@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="main.css">
+    <title>gluc</title>
+  
+</head>
+<body>
+    <div id="enterDetails">
+        <h1>Enter details</h1>
+
+        <h4>PARAMETER</h4> 
+        <input id="enterID"  type="text"> 
+
+        <h4>VALUE</h4> 
+        <input id="enterName" type="text"> 
+
+        <h4>Age</h4> 
+        <input id="enterAge" type="number"> 
+        <br><br>
+
+        <button id="insert" style="color: rgb(153, 0, 28);">INSERT</button>
+        <button id="update" style="color: rgb(153, 0, 28);">UPDATE</button>
+        <button id="remove" style="color: rgb(153, 0, 28);">REMOVE</button> <br><br>
+    </div>
+
+    <div id="findDetails">
+        
+        <h3 class="back"><a href="landing.html" style="text-decoration: none;color:#a7a6a6 ;">< BACK</a></h3>
+        <div id="stack">
+           <h1 >Get your diet plan👇</h1><br><br><br>
+            <!-- <h4 style=" padding: 20px; color: antiquewhite;">ENTER THE PARAMETER</h4> -->
+           
+            <input id="findID" type="text" placeholder="ENTER NAME" style="color: rgb(122, 120, 120);"> <br><br>
+           
+
+            <!-- <input type="checkbox" id="before" name="before" value="Beforemeal" onclick="before(80,130)">
+            <label for="before">Before meal</label><br><br>
+            <input type="checkbox" id="after" name="after" value="Aftermeal" onclick="after(80,180)">
+            <label for="after">After meal</label><br><br> -->
+           
+            <button id="find" >GET</button>
+
+
+            <h3 style="padding: 30px;color: #000000;font-size: 3rem;" id="findName" type="text"></h3>
+            
+            <h3 id="findAge" type="number"></h3> <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <!-- <footer class="foot"> <img  src="C:\Users\Jena\OneDrive\Desktop\firebasics\css_FILL0_wght400_GRAD0_opsz48.png" alt=""><img src="javascript_FILL0_wght400_GRAD0_opsz48.png" alt=""> </footer>  -->
+    </div>
+    </div>
+
+    
+
+    <script type="module" defer>
+
+        //THIS IS WHERE YOU PASTE THE CODE TO CONNECT TO YOUR OWN DATABASE
+        //Copy and paste the CDN bit of code from your app that you created on Firebase.
+        //The script tag above is already there, so careful not to have duplicate script tags.
+    //After you've copied and pasted, just delete the unnecessary script tags. 
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+ 
+  const firebaseConfig = {
+    apiKey: "AIzaSyBVYvmv2IUJy-d-jxKKsjbgMcnfLOX8_ns",
+    authDomain: "something-unique-10986.firebaseapp.com",
+    databaseURL: "https://something-unique-10986-default-rtdb.firebaseio.com",
+    projectId: "something-unique-10986",
+    storageBucket: "something-unique-10986.appspot.com",
+    messagingSenderId: "557386094587",
+    appId: "1:557386094587:web:47bd8eb129106a60d6dd5e",
+    measurementId: "G-ZLQQWEZD9B"
+  };
+
+
+  // Initialize Firebase***
+  const app = initializeApp(firebaseConfig);
+
+
+        import {getDatabase, ref, get, set, child, update, remove}
+        from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"//Copy and Paste the URL from near the top of the CDN you pasted in from firebase
+        // (the one where you imported "initializeApp" from),
+        //but change "firebase-app" to "firebase-database"
+        
+        
+        const Glucose = 121;
+
+        const db = getDatabase();
+        
+
+      
+        var beforeCheck = document.querySelector("#before");
+        var afterCheck = document.querySelector("#after");
+        var insertBtn = document.querySelector("#insert");
+        var updateBtn = document.querySelector("#update");
+        var removeBtn = document.querySelector("#remove");
+        var findBtn = document.querySelector("#find");
+
+        function InsertData() {
+            set(ref(db,  enterID.value),{
+                Value: enterName.value,
+                // ID: enterID.value,              //other diff. parameters if needed*
+                // Age: enterAge.value
+            })
+            .then(()=>{
+                alert("Data added successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+        function FindData() {
+            const dbref = ref(db);
+
+            get(child(dbref,  findID.value))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    findName.innerHTML =  snapshot.val().Value;
+
+                    // if(snapshot.val().Value >= 80 && snapshot.val().Value<=121){
+
+                    //     // window.location.href = "high.html";
+                    //     console.log("normal");
+                    // }
+                    // else if(snapshot.val().Value<80){
+                    //     window.location.href = "low.html";
+                    //     // console.log("Low");
+                    // }
+                    if(snapshot.val().Value>1){
+
+                        var mealTime = prompt("Monitoring Before or After the meal ?");
+
+                        if(mealTime==="before" && snapshot.val().Value>=80 && snapshot.val().Value<=100 ){
+                        window.location.href = "normal.html";
+                        }
+                        else if(mealTime==="before" && snapshot.val().Value<=80){
+                        window.location.href = "low.html";
+
+                        }
+                        else if(mealTime==="before" && snapshot.val().Value>=100){
+                        window.location.href = "high.html";
+
+                        }
+
+
+                        else if(mealTime==="after" && snapshot.val().Value>=170 && snapshot.val().Value<=200){
+                            window.location.href = "normal.html";
+                        }
+                        else if(mealTime==="after" && snapshot.val().Value<=170){
+                            window.location.href = "low.html";
+                        }
+                        
+                        else if(mealTime==="after" && snapshot.val().Value>=200){
+                            window.location.href = "high.html";
+
+                        }
+
+                        // window.location.href = "high.html";
+                        // console.log("High");
+                    }
+                
+                }
+                 else {
+                    alert("No data found");
+                }
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+            
+        }
+
+
+        insertBtn.addEventListener('click', InsertData);
+        findBtn.addEventListener('click', FindData);
+
+      </script>
+</body>
+</html>
